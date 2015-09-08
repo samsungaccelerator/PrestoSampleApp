@@ -1,4 +1,4 @@
-package presto.watch.prestosampleproject;
+package presto.watch.prestosampleproject.DefaultActivities;
 
 import watch.nudge.gesturelibrary.AppControllerReceiverService;
 

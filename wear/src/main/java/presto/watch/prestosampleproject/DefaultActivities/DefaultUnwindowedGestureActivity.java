@@ -1,4 +1,4 @@
-package presto.watch.prestosampleproject;
+package presto.watch.prestosampleproject.DefaultActivities;
 
 import android.os.Bundle;
 import android.os.Vibrator;
@@ -7,6 +7,7 @@ import android.view.WindowManager;
 
 import java.util.ArrayList;
 
+import presto.watch.prestosampleproject.R;
 import watch.nudge.gesturelibrary.UI.GestureIndicator;
 
 /**

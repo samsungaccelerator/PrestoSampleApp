@@ -1,4 +1,4 @@
-package presto.watch.prestosampleproject;
+package presto.watch.prestosampleproject.DefaultActivities;
 
 /**
  * Created by davidjay on 8/7/15.

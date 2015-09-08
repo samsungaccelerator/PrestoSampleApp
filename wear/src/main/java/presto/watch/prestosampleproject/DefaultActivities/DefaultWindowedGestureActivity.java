@@ -1,4 +1,4 @@
-package presto.watch.prestosampleproject;
+package presto.watch.prestosampleproject.DefaultActivities;
 
 import android.animation.AnimatorSet;
 import android.os.Bundle;
@@ -8,6 +8,7 @@ import android.view.WindowManager;
 
 import java.util.ArrayList;
 
+import presto.watch.prestosampleproject.R;
 import watch.nudge.gesturelibrary.AbstractGestureClientActivity;
 import watch.nudge.gesturelibrary.GestureConstants;
 import watch.nudge.gesturelibrary.UI.GestureIndicator;
