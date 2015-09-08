@@ -3,14 +3,20 @@ package presto.watch.prestosampleproject;
 import android.os.Bundle;
 import android.support.wearable.activity.WearableActivity;
 import android.support.wearable.view.BoxInsetLayout;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.Locale;
 
-public class MainWatchActivity extends WearableActivity {
+import watch.nudge.gesturelibrary.AbstractGestureClientActivity;
+import watch.nudge.gesturelibrary.GestureConstants;
+
+public class MainWatchActivity extends AbstractGestureClientActivity {
 
     private static final SimpleDateFormat AMBIENT_DATE_FORMAT =
             new SimpleDateFormat("HH:mm", Locale.US);
@@ -28,6 +34,49 @@ public class MainWatchActivity extends WearableActivity {
         mContainerView = (BoxInsetLayout) findViewById(R.id.container);
         mTextView = (TextView) findViewById(R.id.text);
         mClockView = (TextView) findViewById(R.id.clock);
+    }
+
+    @Override
+    public void onSnap() {
+        Toast.makeText(this,"Snap it up",Toast.LENGTH_LONG).show();
+    }
+
+    @Override
+    public void onFlick() {
+        Toast.makeText(this,"Flickers gonna flick",Toast.LENGTH_LONG).show();
+    }
+
+    @Override
+    public void onTwist() {
+        Toast.makeText(this,"Just twist it",Toast.LENGTH_LONG).show();
+    }
+
+    @Override
+    public void onGestureWindowClosed() {
+        Toast.makeText(this,"Gesture window closed.", Toast.LENGTH_LONG).show();
+    }
+
+    //These functions won't be called until you subscribe to the appropriate gestures.
+    @Override
+    public void onTiltX(float v) {
+        throw new IllegalStateException("This function should not be called unless subscribed to TILT_X.");
+    }
+
+    @Override
+    public void onTilt(float v, float v1, float v2) {
+        throw new IllegalStateException("This function should not be called unless subscribed to TILT.");
+    }
+
+
+
+    @Override
+    public ArrayList<GestureConstants.SubscriptionGesture> getGestureSubscpitionList() {
+        return null;
+    }
+
+    @Override
+    public boolean sendsGestureToPhone() {
+        return true;
     }
 
     @Override
