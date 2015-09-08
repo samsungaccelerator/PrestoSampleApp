@@ -62,7 +62,7 @@ public class MainWatchActivity extends AbstractGestureClientActivity {
 
     @Override
     public void onFlick() {
-        Toast.makeText(this,"Flickers gonna flick",Toast.LENGTH_LONG).show();
+        Toast.makeText(this,"It's a flick!",Toast.LENGTH_LONG).show();
     }
 
     @Override
