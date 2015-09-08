@@ -67,11 +67,13 @@ public class MainWatchActivity extends AbstractGestureClientActivity {
         throw new IllegalStateException("This function should not be called unless subscribed to TILT.");
     }
 
-
-
     @Override
     public ArrayList<GestureConstants.SubscriptionGesture> getGestureSubscpitionList() {
-        return null;
+        ArrayList<GestureConstants.SubscriptionGesture> gestures = new ArrayList<GestureConstants.SubscriptionGesture>();
+        gestures.add(GestureConstants.SubscriptionGesture.FLICK);
+        gestures.add(GestureConstants.SubscriptionGesture.SNAP);
+        gestures.add(GestureConstants.SubscriptionGesture.TWIST);
+        return gestures;
     }
 
     @Override
