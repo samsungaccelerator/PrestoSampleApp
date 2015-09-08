@@ -50,5 +50,5 @@ public class MainActivity extends AbstractPhoneGestureActivity {
     public void onWindowClosed() {
         Log.e("MainActivity","This function should not be called unless windowed gesture detection is enabled.");
     }
-    
+
 }

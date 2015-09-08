@@ -1,9 +1,7 @@
 package presto.watch.prestosampleproject;
 
 import android.os.Bundle;
-import android.support.wearable.activity.WearableActivity;
 import android.support.wearable.view.BoxInsetLayout;
-import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -36,6 +34,27 @@ public class MainWatchActivity extends AbstractGestureClientActivity {
         mClockView = (TextView) findViewById(R.id.clock);
     }
 
+    //Subscribe to gestures.
+
+    @Override
+    public ArrayList<GestureConstants.SubscriptionGesture> getGestureSubscpitionList() {
+        ArrayList<GestureConstants.SubscriptionGesture> gestures = new ArrayList<GestureConstants.SubscriptionGesture>();
+        gestures.add(GestureConstants.SubscriptionGesture.FLICK);
+        gestures.add(GestureConstants.SubscriptionGesture.SNAP);
+        gestures.add(GestureConstants.SubscriptionGesture.TWIST);
+        return gestures;
+    }
+
+    //State whether your app will automatically deliver gesture events to the phone.
+
+    @Override
+    public boolean sendsGestureToPhone() {
+        return true;
+    }
+
+
+    //Override these functions to make your app respond to gesture.
+
     @Override
     public void onSnap() {
         Toast.makeText(this,"Snap it up",Toast.LENGTH_LONG).show();
@@ -65,20 +84,6 @@ public class MainWatchActivity extends AbstractGestureClientActivity {
     @Override
     public void onTilt(float v, float v1, float v2) {
         throw new IllegalStateException("This function should not be called unless subscribed to TILT.");
-    }
-
-    @Override
-    public ArrayList<GestureConstants.SubscriptionGesture> getGestureSubscpitionList() {
-        ArrayList<GestureConstants.SubscriptionGesture> gestures = new ArrayList<GestureConstants.SubscriptionGesture>();
-        gestures.add(GestureConstants.SubscriptionGesture.FLICK);
-        gestures.add(GestureConstants.SubscriptionGesture.SNAP);
-        gestures.add(GestureConstants.SubscriptionGesture.TWIST);
-        return gestures;
-    }
-
-    @Override
-    public boolean sendsGestureToPhone() {
-        return true;
     }
 
     @Override

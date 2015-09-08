@@ -5,7 +5,7 @@ import watch.nudge.gesturelibrary.AppControllerReceiverService;
 /*
 * GestureReceiverService
 *
-* Service which launches the mobile app when the wear app is launched.
+* Service which launches the wear app when the mobile app is launched.
  */
 
 public class GestureReceiverService extends AppControllerReceiverService {
