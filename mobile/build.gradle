@@ -24,5 +24,5 @@ dependencies {
     wearApp project(':wear')
     compile 'com.android.support:appcompat-v7:22.0.0'
     compile 'com.google.android.gms:play-services:7.8.0'
-    compile 'watch.nudge.phonegesturelibrary:phone-gest-lib:0.8.2'
+    compile 'watch.nudge.phonegesturelibrary:phone-gest-lib:0.8.4'
 }
